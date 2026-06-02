@@ -5,7 +5,7 @@ public class EnemyPatrolController : MonoBehaviour
     private const float RightDirection = 1f;
     private const float LeftDirection = -1f;
 
-    [SerializeField] private Movement _movement;
+    [SerializeField] private Mover _movement;
     [SerializeField] private Transform _leftPoint;
     [SerializeField] private Transform _rightPoint;
 
