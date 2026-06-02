@@ -2,19 +2,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Movement _movement;
+    [SerializeField] private Mover _mover;
+    [SerializeField] private Jumper _jumper;
     [SerializeField] private InputReader _inputReader;
-    [SerializeField] private GroundCheck _groundCheck;
+    [SerializeField] private GroundChecker _groundChecker;
 
     private void Update()
     {
-        _movement.Move(_inputReader.Direction);
+        _mover.Move(_inputReader.Direction);
 
         if (_inputReader.IsJump == false)
             return;
 
-        if (_groundCheck.IsGrounded)
-            _movement.Jump();
+        if (_groundChecker.IsGrounded)
+            _jumper.Jump();
 
         _inputReader.ResetJump();
     }
