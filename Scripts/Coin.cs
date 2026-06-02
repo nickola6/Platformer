@@ -5,12 +5,8 @@ public class Coin : MonoBehaviour
 {
     public static event Action PickedUp;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public static void Collect()
     {
-        if (other.TryGetComponent<PlayerController>(out _) == false)
-            return;
-
-        Destroy(gameObject);
         PickedUp?.Invoke();
     }
 }
