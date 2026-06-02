@@ -6,8 +6,8 @@ public class PlayerAnimationController : MonoBehaviour
     private const string Speed = "Speed";
     private const string IsGrounded = "IsGrounded";
 
-    [SerializeField] private Movement _movement;
-    [SerializeField] private GroundCheck _groundCheck;
+    [SerializeField] private InputReader _inputReader;
+    [SerializeField] private GroundChecker _groundChecker;
 
     private Animator _animator;
 
@@ -16,12 +16,25 @@ public class PlayerAnimationController : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        float speed = Mathf.Abs(_movement.GetVelocity().x);
-        bool isGrounded = _groundCheck.IsGrounded;
+        _inputReader.DirectionChanged += OnDirectionChanged;
+        _groundChecker.IsGroundedChanged += OnGroundedChanged;
+    }
 
-        _animator.SetFloat(Speed, speed);
+    private void OnDisable()
+    {
+        _inputReader.DirectionChanged -= OnDirectionChanged;
+        _groundChecker.IsGroundedChanged -= OnGroundedChanged;
+    }
+
+    private void OnDirectionChanged(float direction)
+    {
+        _animator.SetFloat(Speed, Mathf.Abs(direction));
+    }
+
+    private void OnGroundedChanged(bool isGrounded)
+    {
         _animator.SetBool(IsGrounded, isGrounded);
     }
 }
