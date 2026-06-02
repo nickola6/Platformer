@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 552181073980367103}
   - component: {fileID: 2535309391393624740}
-  - component: {fileID: 4591268623170725293}
+  - component: {fileID: 1125583555365649517}
   - component: {fileID: 7087148787073027352}
+  - component: {fileID: 3856437056356067732}
   - component: {fileID: 5674294818240392826}
   - component: {fileID: 8755020454151067723}
   m_Layer: 0
@@ -29,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2529827113234179915}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.973977, y: 2.8778505, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.18, y: 1.794, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88,8 +89,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &4591268623170725293
-CapsuleCollider2D:
+--- !u!61 &1125583555365649517
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,8 +122,18 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.29}
+    newSize: {x: 1, y: 1.29}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
   m_Size: {x: 1, y: 1.29}
-  m_Direction: 0
+  m_EdgeRadius: 0
 --- !u!50 &7087148787073027352
 Rigidbody2D:
   serializedVersion: 4
@@ -149,7 +160,28 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!95 &3856437056356067732
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529827113234179915}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 53eb5430873902a4285e0fa106364274, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5674294818240392826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _jumpForce: 8
 --- !u!114 &8755020454151067723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2a1cd65de533f4b9f2324a7b3162d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movement: {fileID: 0}
+  _movement: {fileID: 5674294818240392826}
   _leftPoint: {fileID: 0}
   _rightPoint: {fileID: 0}
   _arrivalDistance: 0.2
