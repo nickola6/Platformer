@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] private CoinCounter _coinCounter;
     [SerializeField] private Health _health;
     [SerializeField] private Death _death;
 
@@ -9,8 +10,9 @@ public class CollisionHandler : MonoBehaviour
     {
         if (other.TryGetComponent(out Coin coin))
         {
-            coin.Collect();
+            _coinCounter.AddCoin();
             Destroy(coin.gameObject);
+
             return;
         }
 
@@ -18,12 +20,14 @@ public class CollisionHandler : MonoBehaviour
         {
             _health.Heal(medkit.HealValue);
             Destroy(medkit.gameObject);
+
             return;
         }
 
         if (other.TryGetComponent<Spikes>(out _))
         {
             _death.Die();
+
             return;
         }
     }
