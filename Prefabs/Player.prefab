@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 8090950954884433193}
   - component: {fileID: 2188698075266422113}
   - component: {fileID: 3088174466454083821}
-  - component: {fileID: 711334925268347500}
+  - component: {fileID: 5517721217890828847}
   - component: {fileID: 1029872041717531574}
   m_Layer: 8
   m_Name: Player
@@ -120,7 +120,7 @@ Transform:
   m_GameObject: {fileID: 6381393833945528037}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 3.07, z: 0}
+  m_LocalPosition: {x: 1.3099837, y: 3.9852042, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fab267935798344818c37c6afb6365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _death: {fileID: 711334925268347500}
+  _death: {fileID: 5517721217890828847}
   _animator: {fileID: 511664782961743037}
   _playerController: {fileID: 467723421393467665}
   _spriteRenderer: {fileID: 64698626116522537}
@@ -377,8 +377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56abedbdb84d3b247ad55e8b13b30f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coinCounter: {fileID: 0}
   _health: {fileID: 3088174466454083821}
-  _death: {fileID: 711334925268347500}
+  _death: {fileID: 5517721217890828847}
 --- !u!114 &3088174466454083821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxValue: 50
---- !u!114 &711334925268347500
+--- !u!114 &5517721217890828847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -401,11 +402,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6381393833945528037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67c524a3490942345997c45cc722e163, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f262f79b2732f042a963975aca66909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 3088174466454083821}
-  _deathJumpForce: 4
+  _deathJumpForce: 3
 --- !u!114 &1029872041717531574
 MonoBehaviour:
   m_ObjectHideFlags: 0
